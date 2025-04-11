@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #366391;
+  --color-primary-light: #4f6b88;
+  --color-primary-dark: #0a3e75;
+  --color-secondary: #18bc9c;
+  --color-secondary-light: #1abc9c;
+  --color-secondary-dark: #16a085;
+  --color-accent: #e74c3c;
+  --color-background-light: #ecf0f1;
+  --color-background-dark: #222222;
+  --color-header-background: #4f6b88;
+  --color-header-background-dark: #0a3e75;
+  --color-footer-background: #4f6b88;
+  --color-footer-background-dark: #0a3e75;
+  --color-light: #ffffff;
+  --color-warn: #f39c12;
+  --color-info: #3498db;
+  --color-error: #e74c3c;
+  --color-success: #2ecc71;
+  --color-dark: #2d3436;
+  --color-muted: #7f8c8d;
+  --color-text: #121416;
+  --color-text-light: #ecf0f1;
+
+  --background: var(--color-background-light);
+  --foreground: var(--color-dark);
+  --text: var(--color-text);
+
+  // layout
+  --header-height-desktop: 60px;
+  --header-height-tablet: 55px;
+  --header-height-mobile: 50px;
+  --header-height: var(--header-height-desktop);
+  --header-background: var(--color-header-background);
+  --header-background-dark: var(--color-header-background-dark);
+
+  --footer-height-desktop: 60px;
+  --footer-height-tablet: 55px;
+  --footer-height-mobile: 50px;
+  --footer-height: var(--footer-height-desktop);
+  --footer-background: var(--color-footer-background);
+  --footer-background-dark: var(--color-footer-background-dark);
+
+  --content-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-header-background: var(--header-background);
+  --color-footer-background: var(--footer-background);
+  --color-text: var(--text);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-background-dark);
+    --foreground: var(--color-light);
+    --header-background: var(--header-background-dark);
+    --footer-background: var(--footer-background-dark);
+    --text: var(--color-text-light);
+  }
+}
+
+// Mobile
+@media (max-width: 768px) {
+  :root {
+    --header-height: var(--header-height-mobile);
+    --footer-height: var(--footer-height-mobile);
+  }
+}
+
+// Tablet
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --header-height: var(--header-height-tablet);
+    --footer-height: var(--footer-height-tablet);
+  }
+}
+
+// Desktop
+@media (min-width: 1024px) {
+  :root {
+    --header-height: var(--header-height-desktop);
+    --footer-height: var(--footer-height-desktop);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
